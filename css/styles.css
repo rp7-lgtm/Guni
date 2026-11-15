@@ -21,9 +21,9 @@
    ------------------------------------------------------------ */
 :root {
   --primary: #005596;      /* brand maroon, contrast 10.9:1 on white */
-  --primary-light:rgba(0, 86, 152, 0.569); /*light primary for hover effect*/
+  --primary-light:rgba(0, 86, 152, 0.7); /*light primary for hover effect*/
   --text: #070606;         /* main text, contrast 15.9:1 on white */
-  --lighttext: #FFFCF6;   /* light cream text */
+  --text-light: #FFFCF6;   /* light cream text */
   --muted: #595959;        /* hints and small text, about 7:1 on white */
   --background: #FFFCF6; /* light cream background */
   --surface: #FFFFFF ;      /* light panel color */
@@ -124,7 +124,7 @@ textarea:focus-visible {
   margin-left: 2rem;
 }
 
-/* Remove the bullets and default spacing from the menu list. */
+/* The navigation section */
  
 .nav-list {
   position: static;
@@ -136,11 +136,9 @@ textarea:focus-visible {
 
 }
 
-
-/* The current page gets an underline so it stands out without color alone. */
 .nav-list a[aria-current="page"] {
   font-weight: bold;
-  color: var(--lighttext);
+  color: var(--text-light);
   background-color: var(--primary);
   text-decoration: underline;
 }
@@ -169,9 +167,9 @@ textarea:focus-visible {
 }
 
 .nav-list li:hover a {
-  color: var(--lighttext) !important;
+  color: var(--text-light) !important;
   text-decoration: underline;
-  text-decoration-color: var(--lighttext);
+  text-decoration-color: var(--text-light);
 }
 /* ------------------------------------------------------------
    4. MAIN CONTENT
