@@ -126,42 +126,30 @@ textarea:focus-visible {
 
 /* The navigation section */
  
-.nav-list {
-  position: static;
+.nav-list { /* The navigation links are in a list, but we don't want the bullets. */
   display: flex;
-  flex-wrap: nowrap;
   list-style: none;
-  gap: 0;
   margin: -2rem;
-
 }
 
-.nav-list a[aria-current="page"] {
-  font-weight: bold;
+.nav-list a[aria-current="page"] { /* This highlights the current page in the navigation */
   color: var(--text-light);
   background-color: var(--primary);
   text-decoration: underline;
 }
 
-.nav-list li a {
+
+.nav-list li a {    /* This allows for the navigation links to have borders and span the width */
   display: flex;
   flex: 1;
-  align-items: stretch;
   justify-content: center;
   padding: 20px 30px;
   font-weight: bold;
   text-decoration: none;
   color: var(--text);
   border: 1px solid var(--border);
-
-} 
-
-.nav-list li + li a {
-  border-left: 0;
 }
-
 .nav-list li:hover {
-  font-weight: bold;
   background-color: var(--primary-light);
   border-color: var(--primary-dark);
 }
@@ -169,8 +157,12 @@ textarea:focus-visible {
 .nav-list li:hover a {
   color: var(--text-light) !important;
   text-decoration: underline;
-  text-decoration-color: var(--text-light);
 }
+/* Desktop */
+.menu-toggle {
+  display: none;
+}
+
 /* ------------------------------------------------------------
    4. MAIN CONTENT
    ------------------------------------------------------------ */
@@ -283,27 +275,36 @@ address {
    8. FOOTER
    ------------------------------------------------------------ */
 .site-footer {
-  padding: 1.5rem 1rem;
-  text-align: center;
-  background: var(--surface);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-license {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
 }
 
 .footer-links {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;           /* centers the links in the row */
-  gap: 0.25rem 1.25rem;
-  margin: 0 0 1rem;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  margin: 0;
   padding: 0;
   list-style: none;
+  color: var(--text-light);
 }
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin:1rem
 
-.footer-links a {
-  display: inline-block;
-  padding: 0.5rem 0;
 }
-
-
 /* ------------------------------------------------------------
    9. LARGER SCREENS
    A media query applies its rules only when the condition is true.
