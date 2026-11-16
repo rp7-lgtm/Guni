@@ -1,43 +1,31 @@
 /*
   ============================================================
-  MODULE 5: styles.css for the Contact Page
-  MMS 142: Internet Technologies and Web Development
+  GUNI PAGES
+  CSS Stylesheet  
   ============================================================
-  A CSS rule has three parts:
-      selector { property: value; }
-  Example:   h1 { color: #222222; }
-  Comments in CSS start with slash star and end with star slash.
 
-  This file is written "mobile first": the base styles are for
-  phones, and a media query near the end adds changes for wider screens.
 */
 
 
 /* ------------------------------------------------------------
    1. VARIABLES
-   Variables store a value once so you can reuse it everywhere.
-   Change a color here and the whole page updates.
-   Contrast ratios are against white (WCAG needs 4.5:1 for text).
    ------------------------------------------------------------ */
 :root {
-  --primary: #005596;      /* brand maroon, contrast 10.9:1 on white */
+  --primary: #005596;      /* brand color: Standing waters, have 7.48:1contrast on #FFFCF6*/
   --primary-light:rgba(0, 86, 152, 0.7); /*light primary for hover effect*/
-  --text: #070606;         /* main text, contrast 15.9:1 on white */
-  --text-light: #FFFCF6;   /* light cream text */
+  --text: #070606;         /* main text, have 19.76:1 contrast on #FFFCF6*/
+  --text-light: #FFFCF6;   /* light cream text aginst dark background */
   --muted: #595959;        /* hints and small text, about 7:1 on white */
   --background: #FFFCF6; /* light cream background */
+  --background-dark: #070606; /* dark background for footer*/
   --surface: #FFFFFF ;      /* light panel color */
   --border: #070606;       /* form borders, 4.5:1 so fields are easy to see */
   --error: #DF3A3A;       /* red for errors, 4.5:1 on white */
-  --radius: 0.5rem;
   --accent: #DF3A3A;       /* accent color for branding */
+
 }
 
-.site-footer,
-footer.site-footer {
-  background-color: var(--text);
-  color: #ffffff;
-}
+
 /* ------------------------------------------------------------
    2. RESET AND BASE
    ------------------------------------------------------------ */
@@ -105,9 +93,60 @@ textarea:focus-visible {
   padding: 1rem;
   background: var(--background);
   color: var(--text);
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   border-top: 15px solid var(--accent);
 
+}
+
+/* The navigation bar is a flex container, so the links can be spaced out. */
+.site-navbar {
+  --bs-navbar-padding-y: 0;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-top: 15px solid var(--accent);
+
+}
+
+.site-navbar .navbar-collapse {
+  align-self: stretch;
+  align-items: stretch;
+
+}
+
+.site-navbar .navbar-nav {
+  align-items: stretch;
+}
+
+.site-navbar .container-fluid {
+  padding: 0rem;
+}
+.site-navbar .logo-primary {
+  margin: 0 0 0 2rem;
+}
+
+.site-navbar .navbar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px 30px;
+  font-weight: bold;
+  color: var(--text);
+  border: 1px solid var(--border); /* adds a border to each link */
+}
+
+/* Highlight the current page in the navigation. */
+.site-navbar .navbar-nav .nav-link.active,
+.site-navbar .navbar-nav .nav-link[aria-current="page"] {
+  color: var(--text-light);
+  background-color: var(--primary);
+  text-decoration: underline;
+}
+
+.site-navbar .navbar-nav .nav-link:hover {
+  color: var(--text-light);
+  background-color: var(--primary-light);
+  text-decoration: underline;
 }
  
 .site-name {
@@ -116,52 +155,18 @@ textarea:focus-visible {
   font-weight: bold;
 }
 
-.logo-header {
+.logo-primary {
   max-width: 180px;
   height: auto;
   margin-top: -1rem;
   margin-bottom: -1.5rem;
-  margin-left: 2rem;
+  margin-left: -2rem;
 }
 
-/* The navigation section */
- 
-.nav-list { /* The navigation links are in a list, but we don't want the bullets. */
-  display: flex;
-  list-style: none;
-  margin: -2rem;
-}
+.site-navbar .navbar-toggler {
+  margin-right: 1rem;
+  }
 
-.nav-list a[aria-current="page"] { /* This highlights the current page in the navigation */
-  color: var(--text-light);
-  background-color: var(--primary);
-  text-decoration: underline;
-}
-
-
-.nav-list li a {    /* This allows for the navigation links to have borders and span the width */
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  padding: 20px 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-.nav-list li:hover {
-  background-color: var(--primary-light);
-  border-color: var(--primary-dark);
-}
-
-.nav-list li:hover a {
-  color: var(--text-light) !important;
-  text-decoration: underline;
-}
-/* Desktop */
-.menu-toggle {
-  display: none;
-}
 
 /* ------------------------------------------------------------
    4. MAIN CONTENT
@@ -219,7 +224,7 @@ textarea {
   font: inherit;                     /* uses the same font as the page */
   color: var(--text);
   background: #FFFFFF;
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
 }
 
@@ -274,37 +279,24 @@ address {
 /* ------------------------------------------------------------
    8. FOOTER
    ------------------------------------------------------------ */
-.site-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-license {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
-}
-
-.footer-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap: 1.25rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.site-footer,
+footer.site-footer {
   color: var(--text-light);
+  background-color: var(--background-dark);
 }
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin:1rem
 
+.site-footer .container-fluid {
+  padding: 0;
 }
+
+.logo-secondary {
+  max-width: 180px;
+  height: auto;
+  margin-top: -1rem;
+  margin-bottom: 0rem;
+  margin-left: 2rem;
+}
+
 /* ------------------------------------------------------------
    9. LARGER SCREENS
    A media query applies its rules only when the condition is true.
@@ -319,6 +311,18 @@ address {
     justify-content: space-between;  /* name on the left, menu on the right */
     align-items: center;
     padding: 1rem 2rem;
+  }
+
+  .site-navbar .container-fluid {
+    padding: 0 2rem;
+  }
+
+  .site-footer .container-fluid {
+    padding: 0 2rem;
+  }
+
+  .site-navbar .navbar-collapse {
+    margin-right: -2rem;
   }
 
   main {
