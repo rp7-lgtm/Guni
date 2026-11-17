@@ -13,12 +13,11 @@
 :root {
   --primary: #005596;      /* brand color: Standing waters, have 7.48:1contrast on #FFFCF6*/
   --primary-light:rgba(0, 86, 152, 0.7); /*light primary for hover effect*/
-  --text: #070606;         /* main text, have 19.76:1 contrast on #FFFCF6*/
+  --text-dark: #070606;         /* main text, have 19.76:1 contrast on #FFFCF6*/
   --text-light: #FFFCF6;   /* light cream text aginst dark background */
-  --muted: #595959;        /* hints and small text, about 7:1 on white */
+  --muted: #cccaca;        /* hints and small text, about 7:1 on white */
   --background: #FFFCF6; /* light cream background */
   --background-dark: #070606; /* dark background for footer*/
-  --surface: #FFFFFF ;      /* light panel color */
   --border: #070606;       /* form borders, 4.5:1 so fields are easy to see */
   --error: #DF3A3A;       /* red for errors, 4.5:1 on white */
   --accent: #DF3A3A;       /* accent color for branding */
@@ -43,8 +42,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;                   /* 1rem = the visitor's own text size (usually 16px) */
   line-height: 1.6;                  /* space between lines makes reading easier */
-  color: var(--text);
+  color: var(--text-dark);
   background: var(--background);
+    font-family: 'Poppins', sans-serif;
 }
 
 h1, h2 {
@@ -77,7 +77,7 @@ textarea:focus-visible {
 
 /* On the dark header, a dark outline would disappear, so use white there. */
 .site-header a:focus-visible {
-  outline-color: #FFFFFF;
+  outline-color: var(--background);
 }
 
 
@@ -92,7 +92,7 @@ textarea:focus-visible {
   gap: 0.5rem;
   padding: 1rem;
   background: var(--background);
-  color: var(--text);
+  color: var(--text-dark);
   border: 1px solid var(--border);
   border-top: 15px solid var(--accent);
 
@@ -130,8 +130,7 @@ textarea:focus-visible {
   justify-content: center;
   height: 100%;
   padding: 20px 30px;
-  font-weight: bold;
-  color: var(--text);
+  color: var(--text-dark);
   border: 1px solid var(--border); /* adds a border to each link */
 }
 
@@ -171,6 +170,7 @@ textarea:focus-visible {
 /* ------------------------------------------------------------
    4. MAIN CONTENT
    ------------------------------------------------------------ */
+
 main {
   max-width: 64rem;                  /* keeps lines from getting too wide */
   margin: 0 auto;                    /* auto left and right centers the block */
@@ -187,7 +187,12 @@ main {
   flex-direction: column;
   gap: 2rem;
 }
+/*hero section*/
+.herobackground {
+  padding:0.5rem; 
+  background-color: var(--muted);
 
+}
 
 /* ------------------------------------------------------------
    5. THE FORM
@@ -222,7 +227,7 @@ textarea {
   width: 100%;                       /* fills the form width */
   padding: 0.75rem;                  /* roomy fields are easier to tap */
   font: inherit;                     /* uses the same font as the page */
-  color: var(--text);
+  color: var(--text-dark);
   background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -241,13 +246,12 @@ textarea:user-invalid {
 
 
 /* ------------------------------------------------------------
-   6. BUTTON
+   6. BUTTONS
    ------------------------------------------------------------ */
 .button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   font: inherit;
-  font-weight: bold;
   color: #FFFFFF;
   background: var(--primary);
   border: 2px solid var(--primary);
@@ -261,13 +265,24 @@ textarea:user-invalid {
   border-color: var(--primary-dark);
 }
 
+.button-primary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font: inherit;
+  color: var(--text-dark);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;       
 
+
+
+}
 /* ------------------------------------------------------------
    7. CONTACT DETAILS (ASIDE)
    ------------------------------------------------------------ */
 .contact-info {
   padding: 1rem 1.25rem;
-  background: var(--surface);
+  background: var(--muted);
   border-radius: var(--radius);
 }
 
