@@ -7,14 +7,10 @@
   <meta name="description" content="n/a.">
   <!--Bootstrap CSS-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
-  
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
-
-
-  
+  <!--Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
   <!--Custom CSS-->
   <link rel="stylesheet" href="css/styles.css">
 
@@ -24,6 +20,8 @@
 
   <nav class="navbar navbar-expand-md site-navbar">
     <div class="container-fluid">
+
+      <!--Branding Logo-->
       <a class="navbar-brand" href="index.html" aria-label="Guni home">
         <img src="images/logo-primary.png" alt="Guni Store logo" class="logo-primary">
       </a>
@@ -33,8 +31,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="mainNav">
-        
+      <div class="collapse navbar-collapse" id="mainNav">  
         <ul class="navbar-nav ms-auto">
           <!-- The navigation links -->
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
@@ -43,28 +40,89 @@
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
+
     </div>
   </nav>
-     <header class="bg-2 py-12 text-start">
+     <header class="bg-2 py-12">
        <div class="container">
-           <div class="hero-background p-5 my-4">  <!--Adds the beckground in the hero section-->
-         <h1 class="text-primary-display display-1 fw-bold mt-2 mb-3">Wear your imagination</h1>
-         <p class="text-secondary-display text-lg fg-2 mb-4">
+          <div class="hero-background p-5 my-5">  <!--Adds the background in the hero section-->
+          <h1 class="hero-title">
+          Wear your imagination.
+          </h1>
+
+          <p class="hero-description text-lg py-3 my-3">
           Cool and unfiltered.
-         </p>
-         <div class="hstack gap-2 text-start">
-           <a href="shop.html" class="button-primary btn-lg">Shop Now</a>
-           
-</div>
-         </div>
-       </div>
+          </p>
+          <a href="shop.html" class="hero-cta button-primary">SHOP NOW</a>
+
+          </div>
+
+        </div>
      </header>
 
 
+     <!-- BODY -->
+     <main class="container py-12">
 
-  <main>  
+    <!-- Row 1: Product quick views -->    
+     <section aria-label="Product collection">
 
- 
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+            <!-- Product 1 -->
+            <article class="col">
+              <div class="product-card">
+                <a href="shop.html" class="product-link">
+                  <div class="product-image">
+                    <img src="images/Don't Be Late Tee.png" alt="Don't Be Late Tee">
+                  </div>
+                </a>
+                <h2 class="product-name my-2">Don't Be Late Tee</h2>
+                <p class="price">PHP 499.00</p>
+                <a href="shop.html" class="link-bold"> View product →</a>
+              </div>
+            </article>
+            <!-- Product 2 -->
+            <article class="col">
+              <div class="product-card">
+                <a href="shop.html" class="product-link">
+                  <div class="product-image">
+                    <img src="images/Everyday Comfort Tee.png" alt="Everyday Comfort Tee">
+                  </div>
+                </a>
+                <h2 class="product-name my-2">Everyday Comfort Tee</h2>
+                <p class="price">PHP 499.00</p>
+                <a href="shop.html" class="link-bold"> View product →</a>
+              </div>
+            </article>
+            <!-- Product 2 -->
+            <article class="col">
+              <div class="product-card">
+                <a href="shop.html" class="link-bold">
+                  <div class="product-image">
+                    <img src="images/Do Good Work Tee.png" alt="Do Good Work Tee">
+                  </div>
+                </a>
+                <h2 class="product-name my-2">Do Good Work Tee</h2>
+                <p class="price">PHP 499.00</p>
+                <a href="shop.html" class="link-bold"> View product →</a>
+              </div>
+            </article>
+
+    </section>
+
+    <!--Section Divider-->
+    <hr class="my-4 border-dark">
+    
+    <!--About us section in the home page-->
+      <div class="row g-7 about-section">
+         <div class="md:col-8">
+          <h2 > 
+            <a href="about.html" class="link-bold""> About us</a>
+          </h2>
+           <p class="about-section-decription">The brand name “GUNI” – inspired by the initial idea to incorporate the Filipino touch – is derived from the Tagalog term “guni-guni,” which translates to imagination. We aim to sell functional T-Shirt designs with a retro, minimalistic twist, and hope to embody a straightforward approach in building a shopping experience for our customers.</p>
+         </div>
+
   </main>
 
 

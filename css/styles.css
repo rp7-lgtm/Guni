@@ -6,7 +6,7 @@
 */
 
 /* ------------------------------------------------------------
-   1. VARIABLES
+   1. VARIABLES (modified)
    Shared colors and font-family values used throughout the stylesheet.
    ------------------------------------------------------------ */
 :root {
@@ -15,21 +15,19 @@
   --text-dark: #070606;         /* main text, have 19.76:1 contrast on #FFFCF6*/
   --text-light: #FFFCF6;   /* light cream text aginst dark background */
   --muted: #cccaca95;        /* hints and small text, about 7:1 on white */
-  --background: #FFFCF6; /* light cream background */
+  --background: #FFFCF6; /* Main backround  */
   --background-dark: #070606; /* dark background for footer*/
   --border: #070606;       /* form borders, 4.5:1 so fields are easy to see */
   --error: #DF3A3A;       /* red for errors, 4.5:1 on white */
   --accent: #DF3A3A;       /* accent color for branding */
-  --font-primary: 'Poppins', sans-serif;
-  --font-accent: 'Righteous', sans-serif;
+  --font-primary: 'Poppins', sans-serif; /*primary font*/
+  --font-accent: 'Righteous', sans-serif; /* accent/secondary font for branding */
 }
 
 /* ------------------------------------------------------------
-   2. RESET AND BASE
+   2. RESET AND BASE(modified)
    Sets the box sizing, page defaults, typography, and keyboard focus styles.
    ------------------------------------------------------------ */
-
-
 
 /* The body sets the default font, size, color and spacing for the whole page. */
 body {
@@ -48,10 +46,26 @@ h1, h2 {
   margin: 0 0 0.75rem;
 }
 
-h1 { font-size: 2rem; font-family: var(--font-primary);}
-h2 { font-size: 1.375rem; font-family: var(--font-accent);}
+h1 { font-size: 2rem; font-family: var(--font-primary);} /* For main headings  */ 
+h2 { font-size: 1.375rem; font-family: var(--font-accent);} /* can be used for page titles */ 
 
-p { margin: 0 0 1rem; }
+
+
+/* Body */
+
+p { margin: 0 0 1rem; } /*Default Paragraph*/
+
+.text-lg { /* use for large text */
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  line-height: 1.7;
+}
+
+.text-xl { /* use for extra - large text*/
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  line-height: 1.5;
+}
+
+
 
 /* Focus style: shows keyboard users where they are. Never remove it without a replacement. */
 a:focus-visible,
@@ -70,10 +84,10 @@ textarea:focus-visible {
 
 
 /* ------------------------------------------------------------
-   3. HEADER AND NAVIGATION
+   3. HEADER AND NAVIGATION (modified)
    Styles the site header and responsive Bootstrap navigation.
    ------------------------------------------------------------ */
-
+/*Customizes the navigation header with border and red accent color*/
 .site-navbar {
   --bs-navbar-padding-y: 0;
   background: var(--background);
@@ -81,18 +95,22 @@ textarea:focus-visible {
   border-top: 15px solid var(--accent);
 
 }
+
+/*Allows for the navigation links to fill the available space when using smaller screen */
 .site-navbar .navbar-collapse {
   align-self: stretch;
   align-items: stretch;
 }
-
+/*To overrides Bootstrap’s built-in spacing so the navbar contents can sit closer to the edges.*/
 .site-navbar .container-fluid {
   padding: 0rem;
 }
+
+/*Aligns the primary logo*/
 .site-navbar .logo-primary {
   margin: 0 0 0 2rem;
 }
-
+/*This rule styles navbar links as centered, full-height clickable areas with spacing, dark text, and a border.*/
 .site-navbar .navbar-nav .nav-link {
   display: flex;
   align-items: center;
@@ -111,22 +129,27 @@ textarea:focus-visible {
   text-decoration: underline;
 }
 
+/* Give non-current navigation links a visual hover state. */
 .site-navbar .navbar-nav .nav-link:not(.active):not([aria-current="page"]):hover {
   color: var(--text-dark);
   background-color: var(--primary-light);
   text-decoration: underline;
 }
  
+/* Style the optional site-name text in the header. */
 .site-name {
   margin: 0;
   font-size: 1.25rem;
   font-weight: bold;
 }
+
+/* Customization of hamburger button's border and spacing*/
 .site-navbar .navbar-toggler {
   border: 1px solid var(--border);
   margin-right: 1rem;
 }
  
+/* Limit the primary header logo size and adjust its spacing. */
 .logo-primary {
   max-width: 180px;
   height: auto;
@@ -138,35 +161,87 @@ textarea:focus-visible {
 
 
 /* ------------------------------------------------------------
-   4. MAIN CONTENT
-   Sets the content width and styles the hero and page layouts.
+   4. Home page 
+   Default customization of the home page (and for smaller screens)
    ------------------------------------------------------------ */
 
+/* Constrains, centers, and pads the page's main content. */
 main {
-  max-width: 64rem;                  /* keeps lines from getting too wide */
-  margin: 0 auto;                    /* auto left and right centers the block */
+  max-width: 64rem;             
+  margin: 0 auto;               
   padding: 1.5rem 1rem;
 }
 
+/* Gives introductory supporting text a muted color. */
 .intro {
   color: var(--muted);
 }
 
-/* Phones: form first, contact details below, with space between. */
+/* Stacks the form and contact details on phones with space between them. */
 .page-layout {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-/* Adds the background treatment for the home-page hero. */
+
+
+/* Adds a muted background panel behind the home-page hero. */
 .hero-background {
   padding:0.5rem; 
   background-color: var(--muted);
 
 }
 
+/* Sets the hero heading's responsive size and base left alignment. */
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: left;
+}
+/* Left-aligns the supporting text below the hero heading. */
+.hero-description {
+  text-align: left;
+
+}
+
+/* Keeps the hero call-to-action aligned with the hero text. */
+.hero-cta {
+  display: block;
+  width: fit-content;
+  margin: 0;
+}
+
+/* Makes product and About links dark and bold. */
+.link-bold{
+color: var(--text-dark);
+font-weight: bold;
+
+}
+
+/* Offsets product cards on narrow screens. */
+@media (max-width: 47.99em) {
+  .product-card {
+    margin-left: 2rem;
+  }
+}
+
+
+/* Styles the divider between page sections. */
+.section-divider {
+  border : 
+}
+
+ 
+/* Separates the About section with spacing and a muted background. */
+.about-section {
+margin-top: 7rem;
+padding:2rem; 
+background-color: var(--muted);
+
+}
 /* ------------------------------------------------------------
-   5. THE FORM
+   5. THE FORM (copy) 
    Styles form spacing, labels, fields, hints, and validation feedback.
    ------------------------------------------------------------ */
 .form-group {
@@ -218,25 +293,22 @@ textarea:user-invalid {
 
 
 /* ------------------------------------------------------------
-   6. BUTTONS
+   6. BUTTONS (modified)
    Styles site buttons and hover feedback.
    ------------------------------------------------------------ */
+/* Styles filled primary buttons and button-like links. */
 .button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-
   color: #FFFFFF;
   background: var(--primary);
   border: 2px solid var(--primary);
   border-radius: var(--radius);
-  cursor: pointer;                   /* shows the hand pointer */
+  cursor: pointer;
 }
 
-/* Hover gives feedback when the mouse is over the button. */
-
-
+/* Styles outlined call-to-action buttons using the accent font. */
 .button-primary {
-  display: inline-block;
   padding: 0.75rem 1.5rem;
   font-family: var(--font-accent);
   color: var(--text-dark);
@@ -245,14 +317,14 @@ textarea:user-invalid {
   cursor: pointer;
 }
 
-.button:hover,
+/* Fills the outlined button with the primary color on hover. */
 .button-primary:hover {
   color: var(--text-light);
   background-color: var(--primary);
   border-color: var(--primary);
 }
 /* ------------------------------------------------------------
-   7. CONTACT DETAILS (ASIDE)
+   7. CONTACT DETAILS (ASIDE) (copy) 
    Separates alternative contact information into a panel.
    ------------------------------------------------------------ */
 .contact-info {
@@ -267,7 +339,7 @@ address {
 
 
 /* ------------------------------------------------------------
-   8. FOOTER
+   8. FOOTER (modified)
    Styles the footer colors and secondary logo.
    ------------------------------------------------------------ */
 .site-footer,
@@ -290,21 +362,30 @@ footer.site-footer {
 }
 
 .logo-secondary {
-  max-width: 180px;
+  width: clamp(5rem, 12vw, 11.25rem);
+  max-width: 60%;
   height: auto;
-  margin-top: -1rem;
-  margin-bottom: 0rem;
-  margin-left: 2rem;
+  margin-left: 1rem;
 }
 
 /* ------------------------------------------------------------
-   9. LARGER SCREENS
+   9. LARGER SCREENS (copy)
    Adjusts the header and content layouts at the tablet breakpoint.
    A media query applies its rules only when the condition is true.
    Here: when the screen is at least 48em wide (about 768px, a tablet).
    em is used so it also works when visitors enlarge their text.
    ------------------------------------------------------------ */
 @media (min-width: 48em) {
+
+
+  .hero-title,
+  .hero-description {
+    text-align: center;
+  }
+
+  .hero-cta {
+    margin-inline: auto;
+  }
 
   /* Put the store name and menu on one row. */
   .site-header {
@@ -341,9 +422,8 @@ footer.site-footer {
   }
 }
 
-
 /* ------------------------------------------------------------
-   10. REDUCED MOTION
+   10. REDUCED MOTION (copy)
    Disables transitions and animations for users who prefer less motion.
    Respects visitors who ask their device to limit animation.
    ------------------------------------------------------------ */
