@@ -241,13 +241,8 @@ margin-top: 7rem;
 padding:2rem; 
 background-color: var(--muted);
 }
-.logo-primary-nb {
-  max-width: 100px;
-  margin-bottom: 0.5rem;
-  
-}
 
-}
+
 /* ------------------------------------------------------------
    5. THE FORM (copy) 
    Styles form spacing, labels, fields, hints, and validation feedback.
