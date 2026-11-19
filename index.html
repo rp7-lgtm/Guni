@@ -5,19 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Guni</title>
   <meta name="description" content="n/a.">
-  <!--Bootstrap CSS-->
+  <!-- Load Bootstrap's layout and component styles. -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
-  <!--Google Fonts-->
+  <!-- Load the fonts used for the site's headings and body text. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
-  <!--Custom CSS-->
+  <!-- Apply the site's custom styles. -->
   <link rel="stylesheet" href="css/style.css">
 
 
 </head>
 <body>
 
+  <!-- Site navigation: logo, page links, and a collapsible mobile menu. -->
   <nav class="navbar navbar-expand-md site-navbar">
     <div class="container-fluid">
 
@@ -43,7 +44,10 @@
 
     </div>
   </nav>
-     <header class="bg-2 py-12">
+
+
+     <!-- Main page content begins with the promotional hero. -->
+     <header class="hero">
        <div class="container">
           <div class="hero-background p-5 my-5">  <!--Adds the background in the hero section-->
           <h1 class="hero-title">
@@ -61,15 +65,15 @@
      </header>
 
 
-     <!-- BODY -->
-     <main class="container py-12">
 
-    <!-- Row 1: Product quick views -->    
+     <!-- Main content: featured products and the GUNI brand introduction. -->
+     <main class="container py-12"> 
+     <!-- Featured products with links to the shop. -->
      <section aria-label="Product collection">
 
         <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
 
-            <!-- Product 1 -->
+            <!-- Featured product: Don't Be Late Tee. -->
             <article class="col">
               <div class="product-card">
                 <a href="shop.html" class="product-link">
@@ -82,7 +86,7 @@
                 <a href="shop.html" class="link-bold"> View product →</a>
               </div>
             </article>
-            <!-- Product 2 -->
+            <!-- Featured product: Everyday Comfort Tee. -->
             <article class="col">
               <div class="product-card">
                 <a href="shop.html" class="product-link">
@@ -95,7 +99,7 @@
                 <a href="shop.html" class="link-bold"> View product →</a>
               </div>
             </article>
-            <!-- Product 2 -->
+            <!-- Featured product: Do Good Work Tee. -->
             <article class="col">
               <div class="product-card">
                 <a href="shop.html" class="link-bold">
@@ -111,14 +115,14 @@
 
     </section>
 
-    <!--Section Divider-->
+    <!-- Section Divider. -->
     <hr class="my-4 border-dark">
     
-    <!--About us section in the home page-->
+    <!-- Briefly introduce GUNI and link to the full About page. -->
       <div class="row g-7 about-section">
          <div class="md:col-8">
           <h2 > 
-            <a href="about.html" class="link-bold""> About us</a>
+            <a href="about.html" class="link-bold""> About GUNI </a>
           </h2>
            <p class="about-section-decription">The brand name “GUNI” – inspired by the initial idea to incorporate the Filipino touch – is derived from the Tagalog term “guni-guni,” which translates to imagination. We aim to sell functional T-Shirt designs with a retro, minimalistic twist, and hope to embody a straightforward approach in building a shopping experience for our customers.</p>
          </div>
@@ -126,7 +130,7 @@
   </main>
 
 
-  <!-- footer -->
+  <!-- Footer with the site logo, contact and policy links, and copyright. -->
   
   <footer class="site-footer py-4">
     <div class="container-fluid">
@@ -138,18 +142,15 @@
         </div>
         <div class="col-12 col-md-8">
           <ul class="list-unstyled d-flex flex-column flex-sm-row justify-content-center justify-content-md-end align-items-left gap-2 ps-3 mb-1">
-            <li><a class="link-light" href="about.html">About us</a></li>
-            <li><a class="link-light" href="contact.html">Contact us</a></li>
-            <li><a class="link-light" href="privacy.html">Privacy policy</a></li>
-            <li><a class="link-light" href="terms.html">Terms</a></li>
+            <li><a class="link-light" href="contact.html">Contact us  |</a></li>
+            <li><a class="link-light" href="privacy.html"> Privacy Policy</a></li> 
           </ul >
           <p class="text-caption text-end pe-3 m-0">&copy; Guni. All rights reserved.</p>
         </div>
       </div>
     </div>
   </footer>
-
-
+  <!-- Load Bootstrap's JavaScript for the responsive navigation menu. -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
 </body>
 </html>

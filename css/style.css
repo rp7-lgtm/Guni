@@ -11,8 +11,7 @@
    ------------------------------------------------------------ */
 :root {
   --primary: #005596;      /* brand color: Standing waters, have 7.48:1contrast on #FFFCF6*/
-  --primary-light:rgba(0, 86, 152, 0.7); /*light primary for hover effect*/
-  --text-dark: #070606;         /* main text, have 19.76:1 contrast on #FFFCF6*/
+  --text-dark: #070606;       /* main text, have 19.76:1 contrast on #FFFCF6*/
   --text-light: #FFFCF6;   /* light cream text aginst dark background */
   --muted: #cccaca95;        /* hints and small text, about 7:1 on white */
   --background: #FFFCF6; /* Main backround  */
@@ -46,7 +45,7 @@ h1, h2 {
   margin: 0 0 0.75rem;
 }
 
-h1 { font-size: 2rem; font-family: var(--font-primary);} /* For main headings  */ 
+h1 { font-size: 2.25rem; font-family: var(--font-primary);} /* For main headings  */ 
 h2 { font-size: 1.375rem; font-family: var(--font-accent);} /* can be used for page titles */ 
 
 
@@ -127,13 +126,16 @@ textarea:focus-visible {
   color: var(--text-light);
   background-color: var(--primary);
   text-decoration: underline;
+    font-weight: bold;
 }
 
 /* Give non-current navigation links a visual hover state. */
 .site-navbar .navbar-nav .nav-link:not(.active):not([aria-current="page"]):hover {
   color: var(--text-dark);
-  background-color: var(--primary-light);
+  background-color: var(--muted);
   text-decoration: underline;
+  font-weight: bold;
+
 }
  
 /* Style the optional site-name text in the header. */
@@ -187,9 +189,9 @@ main {
 
 /* Adds a muted background panel behind the home-page hero. */
 .hero-background {
-  padding:0.5rem; 
   background-color: var(--muted);
-
+  width: 95%;
+  margin-inline: auto;
 }
 
 /* Sets the hero heading's responsive size and base left alignment. */
@@ -222,7 +224,7 @@ font-weight: bold;
 /* Offsets product cards on narrow screens. */
 @media (max-width: 47.99em) {
   .product-card {
-    margin-left: 2rem;
+    margin-left: 2.5rem;
   }
 }
 
@@ -238,6 +240,12 @@ font-weight: bold;
 margin-top: 7rem;
 padding:2rem; 
 background-color: var(--muted);
+}
+.logo-primary-nb {
+  max-width: 100px;
+  margin-bottom: 0.5rem;
+  
+}
 
 }
 /* ------------------------------------------------------------
@@ -322,6 +330,7 @@ textarea:user-invalid {
   color: var(--text-light);
   background-color: var(--primary);
   border-color: var(--primary);
+
 }
 /* ------------------------------------------------------------
    7. CONTACT DETAILS (ASIDE) (copy) 
@@ -377,6 +386,14 @@ footer.site-footer {
    ------------------------------------------------------------ */
 @media (min-width: 48em) {
 
+  .product-card {
+    margin-left: 4rem;
+  }
+
+  .hero-background {
+    width: calc(100% + 2rem);
+    margin-inline: -1rem;
+  }
 
   .hero-title,
   .hero-description {
