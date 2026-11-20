@@ -277,3 +277,10 @@ body.privacy-page { padding-bottom:0; }
   text-underline-offset: 0.2em;
   font-weight: 700;
 }
+/* Shared footer links: minimum clickable target dimensions. */
+.site-footer .privacy-footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-width: 24px;
+  min-height: 24px;
+}
