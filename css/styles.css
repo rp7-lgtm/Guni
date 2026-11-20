@@ -291,3 +291,11 @@ body.privacy-page { padding-bottom:0; }
   min-width: 24px;
   min-height: 24px;
 }
+/* Clear, high-contrast focus indicator for form fields */
+.form-control:focus,
+.form-select:focus {
+  border-color: #005596;
+  outline: 3px solid #005596;
+  outline-offset: 2px;
+  box-shadow: none;
+}
