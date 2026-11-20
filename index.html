@@ -1,156 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Guni</title>
-  <meta name="description" content="n/a.">
-  <!-- Load Bootstrap's layout and component styles. -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
-  <!-- Load the fonts used for the site's headings and body text. -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
-  <!-- Apply the site's custom styles. -->
-  <link rel="stylesheet" href="css/styles.css">
-
-
-</head>
-<body>
-
-  <!-- Site navigation: logo, page links, and a collapsible mobile menu. -->
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Home | Guni
+  </title>
+  <meta content="n/a." name="description"/>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Righteous&amp;display=swap" rel="stylesheet"/>
+  <link href="css/styles.css" rel="stylesheet"/>
+ </head>
+ <body>
   <nav class="navbar navbar-expand-md site-navbar">
-    <div class="container-fluid">
-
-      <!--Branding Logo-->
-      <a class="navbar-brand" href="index.html" aria-label="Guni home">
-        <img src="images/logo-primary.png" alt="Guni Store logo" class="logo-primary">
-      </a>
-      <!--Bootstrap’s hamburger-button styling-->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="mainNav">  
-        <ul class="navbar-nav ms-auto">
-          <!-- The navigation links -->
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li> 
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
+   <div class="container-fluid">
+    <a aria-label="Guni home" class="navbar-brand" href="index.html">
+     <img alt="Guni Store logo" class="logo-primary" src="images/logo-primary.png"/>
+    </a>
+    <button aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#mainNav" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+     <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+       <a aria-current="page" class="nav-link active" href="index.html">
+        Home
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="shop.html">
+        Shop
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="contact.html">
+        Contact
+       </a>
+      </li>
+     </ul>
     </div>
+   </div>
   </nav>
-
-
-     <!-- Main page content begins with the promotional hero. -->
-     <header class="hero">
-       <div class="container">
-          <div class="hero-background p-5 my-5">  <!--Adds the background in the hero section-->
-          <h1 class="hero-title">
-          Wear your imagination.
-          </h1>
-
-          <p class="hero-description text-lg py-3 my-3">
-          Cool and unfiltered.
-          </p>
-          <a href="shop.html" class="hero-cta button-primary">SHOP NOW</a>
-
-          </div>
-
-        </div>
-     </header>
-
-
-
-     <!-- Main content: featured products and the GUNI brand introduction. -->
-     <main class="container py-12"> 
-     <!-- Featured products with links to the shop. -->
-     <section aria-label="Product collection">
-
-        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-
-            <!-- Featured product: Don't Be Late Tee. -->
-            <article class="col">
-              <div class="product-card">
-                <a href="shop.html" class="product-link">
-                  <div class="product-image">
-                    <img src="images/Don't Be Late Tee.png" alt="Don't Be Late Tee">
-                  </div>
-                </a>
-                <h2 class="product-name my-2">Don't Be Late Tee</h2>
-                <p class="price">PHP 499.00</p>
-                <a href="shop.html" class="link-bold"> View product →</a>
-              </div>
-            </article>
-            <!-- Featured product: Everyday Comfort Tee. -->
-            <article class="col">
-              <div class="product-card">
-                <a href="shop.html" class="product-link">
-                  <div class="product-image">
-                    <img src="images/Everyday Comfort Tee.png" alt="Everyday Comfort Tee">
-                  </div>
-                </a>
-                <h2 class="product-name my-2">Everyday Comfort Tee</h2>
-                <p class="price">PHP 499.00</p>
-                <a href="shop.html" class="link-bold"> View product →</a>
-              </div>
-            </article>
-            <!-- Featured product: Do Good Work Tee. -->
-            <article class="col">
-              <div class="product-card">
-                <a href="shop.html" class="link-bold">
-                  <div class="product-image">
-                    <img src="images/Do Good Work Tee.png" alt="Do Good Work Tee">
-                  </div>
-                </a>
-                <h2 class="product-name my-2">Do Good Work Tee</h2>
-                <p class="price">PHP 499.00</p>
-                <a href="shop.html" class="link-bold"> View product →</a>
-              </div>
-            </article>
-
-    </section>
-
-    <!-- Section Divider. -->
-    <hr class="my-4 border-dark">
-    
-    <!-- Briefly introduce GUNI and link to the full About page. -->
-      <div class="row g-7 about-section">
-         <div class="md:col-8">
-          <h2 > 
-            <a href="about.html" class="link-bold""> About GUNI </a>
-          </h2>
-           <p class="about-section-decription">The brand name “GUNI” – inspired by the initial idea to incorporate the Filipino touch – is derived from the Tagalog term “guni-guni,” which translates to imagination. We aim to sell functional T-Shirt designs with a retro, minimalistic twist, and hope to embody a straightforward approach in building a shopping experience for our customers.</p>
-         </div>
-
-  </main>
-
-
-  <!-- Footer with the site logo, contact and policy links, and copyright. -->
-  
-  <footer class="site-footer py-4">
-    <div class="container-fluid">
-      <div class="row gx-0 align-items-center gy-3">
-        <div class="col-12 col-md-4 text-start">
-          <a class="d-inline-block" href="index.html" aria-label="Guni home">
-            <img src="images/logo-secondary.png" alt="Guni Store logo" class="logo-secondary">
-          </a>
-        </div>
-        <div class="col-12 col-md-8">
-          <ul class="list-unstyled d-flex flex-column flex-sm-row justify-content-center justify-content-md-end align-items-left gap-2 ps-3 mb-1">
-            <li><a class="link-light" href="contact.html">Contact us  |</a></li>
-            <li><a class="link-light" href="privacy.html"> Privacy Policy</a></li> 
-          </ul >
-          <p class="text-caption text-end pe-3 m-0">&copy; Guni. All rights reserved.</p>
-        </div>
-      </div>
+  <header class="hero">
+   <div class="container">
+    <div class="hero-background p-5 my-5">
+     <h1 class="hero-title">
+      Wear your imagination.
+     </h1>
+     <p class="hero-description text-lg py-3 my-3">
+      Cool and unfiltered.
+     </p>
+     <a class="hero-cta button-primary" href="shop.html">
+      SHOP NOW
+     </a>
     </div>
+   </div>
+  </header>
+  <main class="container py-12">
+   <section aria-label="Product collection">
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+     <article class="col">
+      <div class="product-card">
+       <a class="product-link" href="dont-be-late-tee.html">
+        <div class="product-image">
+         <img alt="Don't Be Late Tee" src="images/Don't Be Late Tee.png"/>
+        </div>
+       </a>
+       <h2 class="product-name my-2">
+        Don't Be Late Tee
+       </h2>
+       <p class="price">
+        PHP 499.00
+       </p>
+       <a class="link-bold" href="dont-be-late-tee.html">
+        View product →
+       </a>
+      </div>
+     </article>
+     <article class="col">
+      <div class="product-card">
+       <a class="product-link" href="everyday-comfort-tee.html">
+        <div class="product-image">
+         <img alt="Everyday Comfort Tee" src="images/Everyday Comfort Tee.png"/>
+        </div>
+       </a>
+       <h2 class="product-name my-2">
+        Everyday Comfort Tee
+       </h2>
+       <p class="price">
+        PHP 499.00
+       </p>
+       <a class="link-bold" href="everyday-comfort-tee.html">
+        View product →
+       </a>
+      </div>
+     </article>
+     <article class="col">
+      <div class="product-card">
+       <a class="link-bold" href="do-good-work-tee.html">
+        <div class="product-image">
+         <img alt="Do Good Work Tee" src="images/Do Good Work Tee.png"/>
+        </div>
+       </a>
+       <h2 class="product-name my-2">
+        Do Good Work Tee
+       </h2>
+       <p class="price">
+        PHP 499.00
+       </p>
+       <a class="link-bold" href="do-good-work-tee.html">
+        View product →
+       </a>
+      </div>
+     </article>
+    </div>
+   </section>
+   <hr class="my-4 border-dark"/>
+   <div class="row g-7 about-section">
+    <div class="md:col-8">
+     <h2>
+      About GUNI
+     </h2>
+     <p class="about-section-decription">
+      The brand name “GUNI” – inspired by the initial idea to incorporate the Filipino touch – is derived from the Tagalog term “guni-guni,” which translates to imagination. We aim to sell functional T-Shirt designs with a retro, minimalistic twist, and hope to embody a straightforward approach in building a shopping experience for our customers.
+     </p>
+    </div>
+   </div>
+  </main>
+  <footer class="site-footer py-4">
+   <div class="container-fluid">
+    <div class="row gx-0 align-items-center gy-3">
+     <div class="col-12 col-md-4 text-start">
+      <a aria-label="Guni home" class="d-inline-block" href="index.html">
+       <img alt="Guni Store logo" class="logo-secondary" src="images/logo-secondary.png"/>
+      </a>
+     </div>
+     <div class="col-12 col-md-8 privacy-footer-details">
+      <ul class="privacy-footer-links">
+       <li>
+        <a class="link-light" href="contact.html">
+         Contact Us
+        </a>
+       </li>
+       <li aria-hidden="true">
+        |
+       </li>
+       <li>
+        <a class="link-light" href="privacy.html">
+         Privacy Policy
+        </a>
+       </li>
+      </ul>
+      <p class="text-caption privacy-footer-copyright">
+       © Guni. All rights reserved.
+      </p>
+     </div>
+    </div>
+   </div>
   </footer>
-  <!-- Load Bootstrap's JavaScript for the responsive navigation menu. -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
-</body>
+  <script crossorigin="anonymous" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js">
+  </script>
+ </body>
 </html>
