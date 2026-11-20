@@ -270,3 +270,10 @@ body.privacy-page { padding-bottom:0; }
 .hint {
   color: #595959;
 }
+/* Product size selection: visible cue in addition to color. */
+#order-form .btn-check:checked + .btn {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.2em;
+  font-weight: 700;
+}
