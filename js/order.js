@@ -27,6 +27,8 @@
   form.addEventListener("input", () => {
     feedback.textContent = "";
     fallback.hidden = true;
+    fallback.open = false;
+    fallback.classList.remove("order-fallback-highlight");
   });
   form.addEventListener("submit", event => {
     event.preventDefault();
@@ -51,6 +53,8 @@
     subjectOutput.textContent = subject;
     draft.value = body;
     fallback.hidden = false;
+    fallback.open = true;
+    fallback.classList.add("order-fallback-highlight");
     feedback.textContent = "An email draft has been requested. Review and send it in your email app. If nothing opens, use the manual sending instructions below. No order has been sent by this page.";
     window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
