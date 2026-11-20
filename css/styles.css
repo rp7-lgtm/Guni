@@ -472,9 +472,31 @@ footer.site-footer {
 }
 /* Privacy footer: no strip; both lines share the same right edge. */
 body.privacy-page {padding-bottom:0;}
-.privacy-page .privacy-footer-details {text-align:right; padding-inline:1rem;}
-.privacy-page .privacy-footer-links {
+.site-footer .privacy-footer-details {text-align:right; padding-inline:1rem;}
+.site-footer .privacy-footer-links {
  list-style:none; display:flex; flex-wrap:wrap; align-items:center;
  justify-content:flex-end; gap:.5rem; padding:0; margin:0 0 .25rem;
 }
-.privacy-page .privacy-footer-copyright {margin:0; padding:0; text-align:right;}
+.site-footer .privacy-footer-copyright {margin:0; padding:0; text-align:right;}
+
+/* Shared keyboard focus. */
+.site-navbar .navbar-nav .nav-link:focus-visible {outline:3px solid var(--text-light);outline-offset:-4px;}
+.site-footer a:focus-visible {outline:3px solid var(--text-light);outline-offset:3px;}
+/* Shop-only layout: larger images without changing homepage cards. */
+.shop-page {min-height:100vh;display:flex;flex-direction:column;padding-bottom:0;}
+.shop-page .shop-main {width:100%;max-width:1140px;flex:1;padding:2rem 1.5rem 3rem;margin-inline:auto;}
+.shop-page .shop-main h2,.shop-page .shop-main h3 {font-family:var(--font-accent);}
+.shop-page .shop-product {display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:2.5rem;align-items:center;padding:2.5rem 0;border-bottom:1px solid var(--border);}
+.shop-page .shop-product:last-child {border-bottom:0;}
+.shop-page .shop-product-image {display:block;width:100%;height:auto;max-height:34rem;object-fit:contain;}
+.shop-page .shop-product-details {min-width:0;overflow-wrap:anywhere;}
+.shop-page .shop-price {font-weight:600;}
+.shop-page .shop-inquiry {display:inline-block;text-decoration:none;}
+.shop-page .shop-inquiry:focus-visible {outline:3px solid var(--primary);outline-offset:4px;}
+.shop-page .shop-skip {position:absolute;top:.5rem;left:.5rem;z-index:1100;transform:translateY(-200%);background:var(--background);padding:.75rem 1rem;}
+.shop-page .shop-skip:focus {transform:translateY(0);}
+.shop-page #collection {scroll-margin-top:1.5rem;}
+@media(max-width:767.98px) {
+ .shop-page .shop-product {grid-template-columns:1fr;gap:1.5rem;}
+ .shop-page .shop-main {padding:1.5rem 1rem 2.5rem;}
+}
