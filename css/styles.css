@@ -104,10 +104,6 @@ main { max-width: 64rem; margin: 0 auto; padding: 1.5rem 1rem; }
 @media (max-width: 47.99em) {
   .product-card { margin-left: 2rem; }
 }
-/* Existing unfinished declaration retained from supplied stylesheet. */
-.section-divider {
-  border:
-}
 .about-section { margin-top: 7rem; padding: 2rem; background-color: var(--muted); }
 
 /* 5. THE FORM */
