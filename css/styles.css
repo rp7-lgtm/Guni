@@ -319,3 +319,25 @@ body.privacy-page { padding-bottom:0; }
   text-underline-offset: 0.2em;
   font-weight: 700;
 }
+/* Shared footer links: minimum clickable target dimensions. */
+.site-footer .privacy-footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-width: 24px;
+  min-height: 24px;
+}
+/* Home product text links: minimum clickable target dimensions. */
+.product-card a.link-bold {
+  display: inline-flex;
+  align-items: center;
+  min-width: 24px;
+  min-height: 24px;
+}
+/* Clear, high-contrast focus indicator for form fields */
+.form-control:focus,
+.form-select:focus {
+  border-color: #005596;
+  outline: 3px solid #005596;
+  outline-offset: 2px;
+  box-shadow: none;
+}
