@@ -166,7 +166,7 @@ address { font-style: normal; }
   font-weight: 600;
   line-height: 1.5;
 }
-.contact-error {
+.form-error {
   color: #8b0000;
   font-weight: 600;
 }
@@ -329,6 +329,15 @@ body.privacy-page { padding-bottom:0; }
 .required,
 .hint {
   color: #595959;
+}
+/* Make size options equal-sized 48px targets for consistent selection. */
+#order-form .btn-check + .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
 }
 /* Product size selection: visible cue in addition to color. */
 #order-form .btn-check:checked + .btn {

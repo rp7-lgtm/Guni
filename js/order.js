@@ -15,6 +15,8 @@
   const name = product.dataset.productName;
   const price = Number(product.dataset.productPrice);
   if (!button || !quantity || !feedback || !fallback || !draft || !subjectOutput) return;
+  // Avoid native scrolling to Bootstrap's visually hidden required size radios.
+  form.noValidate = true;
   if (!name || !Number.isFinite(price) || price <= 0) {
     feedback.textContent = "Product information is unavailable. Please contact the store.";
     return;
@@ -26,6 +28,7 @@
   quantity.addEventListener("input", () => quantity.setCustomValidity(""));
   form.addEventListener("input", () => {
     feedback.textContent = "";
+    feedback.classList.remove("form-error");
     fallback.hidden = true;
     fallback.open = false;
     fallback.classList.remove("order-fallback-highlight");
@@ -36,10 +39,11 @@
     const count = quantity.valueAsNumber;
     quantity.setCustomValidity(Number.isInteger(count) && count >= 1 && count <= 99
       ? "" : "Enter a whole-number quantity from 1 to 99.");
-    if (!form.reportValidity()) return;
+    if (!quantity.reportValidity()) return;
     if (!size || !["S", "M", "L", "XL"].includes(size.value)) {
       feedback.textContent = "Please select an available size.";
-      form.querySelector('input[name="size"]').focus();
+      // Match the visual treatment used by the contact form's error message.
+      feedback.classList.add("form-error");
       return;
     }
     const subject = `Order request: ${name}`;
@@ -52,6 +56,7 @@
     ].join("\r\n");
     subjectOutput.textContent = subject;
     draft.value = body;
+    // Keep the draft and manual sending instructions immediately visible after submission.
     fallback.hidden = false;
     fallback.open = true;
     fallback.classList.add("order-fallback-highlight");
