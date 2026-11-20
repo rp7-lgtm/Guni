@@ -1,27 +1,31 @@
-const TO_ADDRESS = "hello@examplewebsite142.com";
-
-const form = document.querySelector("#contact-form");
-
-function buildMailto() {
-  const name = document.querySelector("#full-name").value;
-  const email = document.querySelector("#email").value;
-  const topic = document.querySelector("#topic").value;
-  const text = document.querySelector("#message").value;
-
-  const subject = "Website message: " + topic;
-  const body =
-    "Name: " + name + "\r\n" +
-    "Email: " + email + "\r\n\r\n" +
-    text;
-
-  return (
-    "mailto:" + TO_ADDRESS +
-    "?subject=" + encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(body)
-  );
-}
-
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  window.location.href = buildMailto();
-});
+"use strict";
+(() => {
+  const form = document.querySelector("#contact-form");
+  if (!form) return;
+  const fields = ["full-name", "email", "topic", "message"].map(id => form.querySelector(`#${id}`));
+  const [name, email, topic, message] = fields;
+  const button = form.querySelector("#contact-submit");
+  const feedback = form.querySelector("#contact-feedback");
+  const fallback = form.querySelector("#contact-fallback");
+  if (fields.some(field => !field) || !button || !feedback || !fallback) return;
+  button.disabled = false;
+  form.addEventListener("input", event => {
+    if (typeof event.target.setCustomValidity === "function") event.target.setCustomValidity("");
+    feedback.textContent = "";
+    fallback.hidden = true;
+  });
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    for (const field of [name, message]) {
+      field.setCustomValidity(field.value.trim() ? "" : "Please enter text, not only spaces.");
+    }
+    if (!form.reportValidity()) return;
+    const subject = "Website message: " + topic.options[topic.selectedIndex].text;
+    const body = `Name: ${name.value.trim()}\r\nEmail: ${email.value.trim()}\r\n\r\n${message.value.trim()}`;
+    form.querySelector("#contact-subject").textContent = subject;
+    form.querySelector("#contact-draft").value = body;
+    fallback.hidden = false;
+    feedback.textContent = "An email draft has been requested. Review and send it in your email app. If nothing opens, use the manual instructions below. This page has not sent your message.";
+    window.location.href = "mailto:hello@examplewebsite142.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  });
+})();
