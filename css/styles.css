@@ -71,6 +71,7 @@ textarea:focus-visible {
   color: var(--text-light);
   background-color: var(--primary);
   text-decoration: underline;
+  font-weight:bold;
 }
 .site-navbar .navbar-nav .nav-link:not(.active):not([aria-current="page"]):hover {
   color: var(--text-dark);
@@ -258,6 +259,47 @@ body.privacy-page { padding-bottom:0; }
 .shop-page .shop-inquiry:focus-visible { outline:3px solid var(--primary); outline-offset:4px; }
 .shop-page .shop-skip { position:absolute; top:.5rem; left:.5rem; z-index:1100; transform:translateY(-200%); background:var(--background); padding:.75rem 1rem; }
 .shop-page .shop-skip:focus { transform:translateY(0); }
+
+/* Product names use the brand's Righteous display font. */
+.product-name,
+.shop-page .shop-product-details h3,
+.product-info h1,
+.product-page .product-info h1 {
+  font-family:var(--font-accent);
+}
+
+/* Everyday Comfort Tee product images */
+.product-card .product-image {
+  width:100%;
+  aspect-ratio:1 / 1;
+  overflow:hidden;
+  background:var(--background);
+}
+.product-card .product-image img,
+.everyday-product-image,
+.product-gallery .product-image img {
+  display:block;
+  width:100%;
+  height:100%;
+  max-height:36rem;
+  object-fit:contain;
+}
+.product-card .product-image img { aspect-ratio:1 / 1; }
+.everyday-product-image { height:auto; max-width:32rem; margin-inline:auto; }
+.tee-product-image {
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:32rem;
+  max-height:36rem;
+  margin-inline:auto;
+  object-fit:contain;
+}
+.product-gallery { max-width:32rem; margin-inline:auto; }
+.product-gallery .product-image { width:100%; aspect-ratio:1 / 1; overflow:hidden; background:var(--background); }
+.thumbnail-list { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.75rem; }
+.thumbnail { width:5rem; padding:.25rem; border:1px solid var(--border); background:var(--background); }
+.thumbnail img { display:block; width:100%; aspect-ratio:1 / 1; object-fit:contain; }
 .shop-page #collection { scroll-margin-top:1.5rem; }
 @media(max-width:767.98px) {
   .shop-page .shop-product { grid-template-columns:1fr; gap:1.5rem; }
@@ -276,18 +318,4 @@ body.privacy-page { padding-bottom:0; }
   text-decoration-thickness: 3px;
   text-underline-offset: 0.2em;
   font-weight: 700;
-}
-/* Shared footer links: minimum clickable target dimensions. */
-.site-footer .privacy-footer-links a {
-  display: inline-flex;
-  align-items: center;
-  min-width: 24px;
-  min-height: 24px;
-}
-/* Home product text links: minimum clickable target dimensions. */
-.product-card a.link-bold {
-  display: inline-flex;
-  align-items: center;
-  min-width: 24px;
-  min-height: 24px;
 }
